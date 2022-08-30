@@ -1,4 +1,4 @@
-package com.leetcodetraining.leetcodetraining.service.BuySellStock;
+package com.leetcodetraining.leetcodetraining.service.Array.BuySellStock;
 
 import org.springframework.stereotype.Service;
 

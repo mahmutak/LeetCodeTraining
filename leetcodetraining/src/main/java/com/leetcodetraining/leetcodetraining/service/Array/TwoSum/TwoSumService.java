@@ -1,4 +1,4 @@
-package com.leetcodetraining.leetcodetraining.service.TwoSum;
+package com.leetcodetraining.leetcodetraining.service.Array.TwoSum;
 
 import java.util.HashMap;
 import java.util.Map;

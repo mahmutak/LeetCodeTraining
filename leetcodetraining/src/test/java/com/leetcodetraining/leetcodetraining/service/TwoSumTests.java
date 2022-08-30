@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.leetcodetraining.leetcodetraining.service.TwoSum.TwoSumService;
+import com.leetcodetraining.leetcodetraining.service.Array.TwoSum.TwoSumService;
 
 @SpringBootTest
 class TwoSumTests {
