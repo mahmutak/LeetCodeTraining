@@ -12,6 +12,7 @@ import com.leetcodetraining.leetcodetraining.service.Array.FindMinInRotatedSorte
 import com.leetcodetraining.leetcodetraining.service.Array.MaxProductSubArray.MaxProductSubArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.MaxSubArray.MaxSubArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.ProductExceptSelf.ProductExceptSelfService;
+import com.leetcodetraining.leetcodetraining.service.Array.SearchInRotatedSortedArray.SearchInRotatedSortedArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.TwoSum.TwoSumService;
 
 import org.springframework.web.bind.annotation.RequestBody;;
@@ -40,6 +41,9 @@ public class LeetCodeController {
 
 	@Autowired
 	private FindMinInRotatedSortedArrayService findMinInRotatedSortedArrayService;
+
+	@Autowired
+	private SearchInRotatedSortedArrayService searchInRotatedSortedArrayService;
 
 	@PostMapping("twosum")
 	public int[] twoSum(@RequestBody int[] nums, @RequestParam int target) {
@@ -74,5 +78,10 @@ public class LeetCodeController {
 	@PostMapping("findmininrotatedsortedarray")
 	public int findMinInRotatedSortedArray(@RequestBody int[] nums) {
         return findMinInRotatedSortedArrayService.findMin(nums);
+    }
+
+	@PostMapping("searchinrotatedsortedarray")
+	public int searchInRotatedSortedArray(@RequestBody int[] nums, @RequestBody int target) {
+        return searchInRotatedSortedArrayService.search(nums, target);
     }
 }
