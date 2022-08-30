@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.leetcodetraining.leetcodetraining.service.Array.BuySellStock.BuyAndSellStockService;
 import com.leetcodetraining.leetcodetraining.service.Array.ContainsDublicate.ContainsDublicateService;
+import com.leetcodetraining.leetcodetraining.service.Array.FindMinInRotatedSortedArray.FindMinInRotatedSortedArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.MaxProductSubArray.MaxProductSubArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.MaxSubArray.MaxSubArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.ProductExceptSelf.ProductExceptSelfService;
@@ -37,6 +38,9 @@ public class LeetCodeController {
 	@Autowired
 	private MaxProductSubArrayService maxProductSubArrayService;
 
+	@Autowired
+	private FindMinInRotatedSortedArrayService findMinInRotatedSortedArrayService;
+
 	@PostMapping("twosum")
 	public int[] twoSum(@RequestBody int[] nums, @RequestParam int target) {
 		return twoSumService.twoSum(nums, target);
@@ -65,5 +69,10 @@ public class LeetCodeController {
 	@PostMapping("maxproduct")
 	public int maxProduct(@RequestBody int[] nums) {
         return maxProductSubArrayService.maxProduct(nums);
+    }
+
+	@PostMapping("findmininrotatedsortedarray")
+	public int findMinInRotatedSortedArray(@RequestBody int[] nums) {
+        return findMinInRotatedSortedArrayService.findMin(nums);
     }
 }
