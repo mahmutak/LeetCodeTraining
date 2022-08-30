@@ -1,5 +1,7 @@
 package com.leetcodetraining.leetcodetraining.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import com.leetcodetraining.leetcodetraining.service.Array.MaxProductSubArray.Ma
 import com.leetcodetraining.leetcodetraining.service.Array.MaxSubArray.MaxSubArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.ProductExceptSelf.ProductExceptSelfService;
 import com.leetcodetraining.leetcodetraining.service.Array.SearchInRotatedSortedArray.SearchInRotatedSortedArrayService;
+import com.leetcodetraining.leetcodetraining.service.Array.ThreeSum.ThreeSumService;
 import com.leetcodetraining.leetcodetraining.service.Array.TwoSum.TwoSumService;
 
 import org.springframework.web.bind.annotation.RequestBody;;
@@ -44,6 +47,9 @@ public class LeetCodeController {
 
 	@Autowired
 	private SearchInRotatedSortedArrayService searchInRotatedSortedArrayService;
+
+	@Autowired
+	private ThreeSumService threeSumService;
 
 	@PostMapping("twosum")
 	public int[] twoSum(@RequestBody int[] nums, @RequestParam int target) {
@@ -84,4 +90,9 @@ public class LeetCodeController {
 	public int searchInRotatedSortedArray(@RequestBody int[] nums, @RequestBody int target) {
         return searchInRotatedSortedArrayService.search(nums, target);
     }
+
+	@PostMapping("threesum")
+	public List<List<Integer>> threesum(@RequestBody int[] nums) {
+		return threeSumService.threeSum(nums);
+	}
 }
