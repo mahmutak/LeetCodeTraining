@@ -1,11 +1,12 @@
 package com.leetcodetraining.leetcodetraining.service;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.leetcodetraining.leetcodetraining.service.TwoSum.TwoSumService;
 
 @SpringBootTest
 class TwoSumTests {
