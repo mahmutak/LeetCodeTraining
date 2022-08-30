@@ -1,4 +1,4 @@
-# Two Sum
+# Contains Duplicate
 [contains-duplicate](https://leetcode.com/problems/contains-duplicate/)
 
 ## Level
