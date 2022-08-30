@@ -34,7 +34,7 @@ Straight forward solution works for this question by using hashset to check if e
 ## Usage
 
 ```bash
-Swagger: POST /twosum
+Swagger: POST /containsduplicate
 ```
 
 ## Contributing

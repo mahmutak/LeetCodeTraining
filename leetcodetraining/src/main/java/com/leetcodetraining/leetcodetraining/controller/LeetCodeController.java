@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.leetcodetraining.leetcodetraining.service.Array.BuySellStock.BuyAndSellStockService;
 import com.leetcodetraining.leetcodetraining.service.Array.ContainsDublicate.ContainsDublicateService;
+import com.leetcodetraining.leetcodetraining.service.Array.ProductExceptSelf.ProductExceptSelfService;
 import com.leetcodetraining.leetcodetraining.service.Array.TwoSum.TwoSumService;
 
 import org.springframework.web.bind.annotation.RequestBody;;
@@ -25,6 +26,9 @@ public class LeetCodeController {
 	@Autowired
 	private ContainsDublicateService containsDublicateService;
 
+	@Autowired
+	private ProductExceptSelfService productExceptSelfService;
+
 	@PostMapping("twosum")
 	public int[] twoSum(@RequestBody int[] nums, @RequestParam int target) {
 		return twoSumService.twoSum(nums, target);
@@ -35,8 +39,13 @@ public class LeetCodeController {
 		return buyAndSellStockService.maxProfit(prices);
 	}
 
-	@PostMapping("containsDuplicate")
+	@PostMapping("containsduplicate")
 	public boolean containsDuplicate(@RequestBody int[] nums) {
 		return containsDublicateService.containsDuplicate(nums);
+	}
+
+	@PostMapping("productExceptSelf")
+	public int[] productExceptSelf(@RequestBody int[] nums) {
+		return productExceptSelfService.productExceptSelf(nums);
 	}
 }
