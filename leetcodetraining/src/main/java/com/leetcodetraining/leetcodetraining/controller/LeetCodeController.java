@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.leetcodetraining.leetcodetraining.service.Array.BuySellStock.BuyAndSellStockService;
+import com.leetcodetraining.leetcodetraining.service.Array.ContainerWithMostWater.ContainerWithMostWaterService;
 import com.leetcodetraining.leetcodetraining.service.Array.ContainsDublicate.ContainsDublicateService;
 import com.leetcodetraining.leetcodetraining.service.Array.FindMinInRotatedSortedArray.FindMinInRotatedSortedArrayService;
 import com.leetcodetraining.leetcodetraining.service.Array.MaxProductSubArray.MaxProductSubArrayService;
@@ -50,6 +51,9 @@ public class LeetCodeController {
 
 	@Autowired
 	private ThreeSumService threeSumService;
+
+	@Autowired
+	private ContainerWithMostWaterService containerWithMostWaterService;
 
 	@PostMapping("twosum")
 	public int[] twoSum(@RequestBody int[] nums, @RequestParam int target) {
@@ -94,5 +98,10 @@ public class LeetCodeController {
 	@PostMapping("threesum")
 	public List<List<Integer>> threesum(@RequestBody int[] nums) {
 		return threeSumService.threeSum(nums);
+	}
+
+	@PostMapping("maxarea")
+	public int maxarea(@RequestBody int[] height) {
+		return containerWithMostWaterService.maxArea(height);
 	}
 }
