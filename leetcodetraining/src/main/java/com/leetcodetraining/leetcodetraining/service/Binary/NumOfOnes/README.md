@@ -36,7 +36,9 @@ The input must be a binary string of length 32.
 ## Solution
 
 [General approach](https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently)
+
 [Bitwise Operation](https://en.wikipedia.org/wiki/Bitwise_operation)
+
 [Hamming weight](https://en.wikipedia.org/wiki/Hamming_weight)
 
 ## Usage
