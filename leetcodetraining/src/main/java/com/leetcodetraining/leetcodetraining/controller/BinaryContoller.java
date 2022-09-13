@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.leetcodetraining.leetcodetraining.service.Binary.CountingBits.CountingBitsService;
+import com.leetcodetraining.leetcodetraining.service.Binary.MissingNumber.MissingNumberService;
 import com.leetcodetraining.leetcodetraining.service.Binary.NumOfOnes.NumOfOnesService;
 import com.leetcodetraining.leetcodetraining.service.Binary.SumOfTwoInteger.SumOfTwoIntegerService;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 
 @RestController
@@ -23,6 +26,9 @@ public class BinaryContoller {
     @Autowired
     CountingBitsService countingBitsService;
 
+    @Autowired
+    MissingNumberService missingNumberService;
+
     @PostMapping("gettwosum")
 	public int twoSum(@RequestParam int a, @RequestParam int b) {
 		return sumOfTwoIntegerService.getSum(a, b);
@@ -36,5 +42,10 @@ public class BinaryContoller {
     @PostMapping("countbits")
     public int[] countingBits(@RequestParam int n) {
         return countingBitsService.countBits(n);
+    }
+
+    @PostMapping("missingnumber")
+    public int missingNumber(@RequestBody int[] nums) {
+        return missingNumberService.missingNumber(nums);
     }
 }
