@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.leetcodetraining.leetcodetraining.service.Binary.CountingBits.CountingBitsService;
 import com.leetcodetraining.leetcodetraining.service.Binary.NumOfOnes.NumOfOnesService;
 import com.leetcodetraining.leetcodetraining.service.Binary.SumOfTwoInteger.SumOfTwoIntegerService;
 
@@ -19,6 +20,9 @@ public class BinaryContoller {
     @Autowired
     NumOfOnesService numOfOnesService;
 
+    @Autowired
+    CountingBitsService countingBitsService;
+
     @PostMapping("gettwosum")
 	public int twoSum(@RequestParam int a, @RequestParam int b) {
 		return sumOfTwoIntegerService.getSum(a, b);
@@ -29,4 +33,8 @@ public class BinaryContoller {
         return numOfOnesService.hammingWeight(n);
     }
     
+    @PostMapping("countbits")
+    public int[] countingBits(@RequestParam int n) {
+        return countingBitsService.countBits(n);
+    }
 }
